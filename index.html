@@ -12,76 +12,88 @@ body {
     margin: 0;
     font-family: 'Cairo', sans-serif;
     color: white;
-
-  background: 
-    radial-gradient(circle at 15% 25%, rgba(99, 102, 241, 0.4), transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.3), transparent 45%),
-    linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #1e293b 100%);
-
+    /* خلفية كحلية أفتح وحيوية مع توهج بنفسجي وأزرق */
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(99, 102, 241, 0.4), transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.3), transparent 50%),
+        linear-gradient(135deg, #111827 0%, #1e1b4b 50%, #111827 100%);
     background-attachment: fixed;
+    background-color: #111827; /* لون احتياطي */
 }
-   
 
 /* NAVBAR */
 nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(15, 23, 42, 0.8); /* كحلي شفاف */
+    backdrop-filter: blur(10px); /* تأثير زجاجي حديث */
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 .logo {
     font-weight: bold;
     font-size: 20px;
+    color: #a855f7; /* لون اللوجو بنفسجي */
 }
 
 nav a {
-    color: #cbd5f5;
-    margin-left: 20px;
+    color: #cbd5e1;
+    margin-right: 20px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-/* HERO */
+nav a:hover {
+    color: #a855f7;
+}
+
+/* HERO SECTION */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    /* خلفية تجمع بين الكحلي العميق والبنفسجي مع تأثير إضاءة ناعم في المركز */
-    background: 
-        radial-gradient(circle at center, rgba(139, 92, 246, 0.15), transparent 70%), 
-        linear-gradient(135deg, #0f172a, #1e1b4b, #2e1065);
-    color: #ffffff; /* لضمان وضوح النص */
+    padding: 120px 20px;
+    /* جعل خلفية الـ Hero شفافة لتظهر جمال خلفية الـ body */
+    background: transparent; 
 }
+
 .hero h1 {
-    font-size: 45px;
-    margin-bottom: 10px;
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .hero span {
-    color: #06b6d4;
+    color: #a855f7; /* البنفسجي الجذاب */
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
 }
 
 .hero p {
     color: #94a3b8;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
 }
 
 .btn {
-    padding: 14px 30px;
-    background: linear-gradient(90deg, #06b6d4, #6366f1);
-    border-radius: 10px;
+    padding: 16px 35px;
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+    border-radius: 12px;
     text-decoration: none;
     color: white;
     font-size: 18px;
+    font-weight: bold;
     transition: 0.3s;
+    display: inline-block;
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -5px rgba(139, 92, 246, 0.6);
 }
 
-/* SERVICES */
+/* SERVICES CARDS */
 .services {
     display: flex;
     justify-content: center;
@@ -91,54 +103,54 @@ nav a {
 }
 
 .card {
-    background: #0f172a;
-    padding: 25px;
-    border-radius: 15px;
-    width: 260px;
+    background: rgba(30, 41, 59, 0.5); /* خلفية كرت شفافة وحديثة */
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 280px;
     text-align: center;
     transition: 0.4s;
-    border: 1px solid #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card:hover {
     transform: translateY(-10px);
-    border-color: #06b6d4;
+    border-color: #8b5cf6;
+    background: rgba(30, 41, 59, 0.8);
 }
 
 .card h3 {
-    margin-bottom: 10px;
+    color: #f8fafc;
+    margin-bottom: 15px;
 }
 
 /* PORTFOLIO */
 .portfolio {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-}
-
-.portfolio h2 {
-    margin-bottom: 30px;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
 }
 
 .gallery div {
-    width: 250px;
-    height: 150px;
-    background: #1e293b;
-    border-radius: 10px;
+    width: 300px;
+    height: 180px;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #000;
-    color: #94a3b8;
+    padding: 40px;
+    background: #0f172a;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 </style>
 
