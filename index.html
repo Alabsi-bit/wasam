@@ -1,233 +1,198 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدمات تصميم ومونتاج</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خدمات تصميم ومونتاج</title>
 
-    <style>
-        /* 1. إعدادات الصفحة العامة */
-        body {
-            margin: 0;
-            font-family: 'Cairo', sans-serif;
-            color: white;
-            /* الخلفية الكحلية الجذابة التي طلبتها */
-            background-color: #0f172a; 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
-            background-image: 
+<style>
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    color: white;
+    background-color: #0f172a;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(99,102,241,0.2), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168,85,247,0.2), transparent 40%),
+        linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 90%);
+    background-attachment: fixed;
+}
 
-                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.2), transparent 40%),
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(15,23,42,0.8);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+}
 
-                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.2), transparent 40%),
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to right,#a855f7,#6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-                linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 90%);
+nav a {
+    color: #cbd5e1;
+    margin-right: 20px;
+    text-decoration: none;
+}
 
-            background-attachment: fixed;
+nav a:hover {
+    color: #a855f7;
+}
 
-            min-height: 100vh;
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
 
-            overflow-x: hidden; /* لمنع التمرير الأفقي العرضي */
+.hero span {
+    color: #a855f7;
+}
 
-        }
+.hero p {
+    color: #94a3b8;
+}
 
-        /* 2. الهيدر (Nav) - تم تصحيح المسافات للـ RTL */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+/* BUTTON */
+.btn {
+    padding: 15px 35px;
+    background: linear-gradient(90deg,#8b5cf6,#6366f1);
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
 
-        .logo {
-            font-weight: bold;
-            font-size: 24px;
-            background: linear-gradient(to right, #a855f7, #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* SERVICES */
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 60px 5%;
+}
 
-        nav a {
-            color: #cbd5e1;
-            margin-right: 25px; /* مسافة بين الروابط في وضع RTL */
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
+.card {
+    background: rgba(30,41,59,0.4);
+    padding: 30px;
+    border-radius: 20px;
+    width: 260px;
+    text-align: center;
+}
 
-        nav a:hover {
-            color: #a855f7;
-        }
+.card:hover {
+    transform: translateY(-10px);
+}
 
-        /* 3. قسم الهيرو */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: transparent !important;
-        }
+/* GALLERY */
+.portfolio {
+    text-align: center;
+    padding: 60px 5%;
+}
 
-        .hero h1 {
-            font-size: clamp(32px, 5vw, 52px); /* حجم خط متجاوب */
-            margin-bottom: 15px;
-        }
+.gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .hero span {
-            color: #a855f7; 
-            text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-        }
+.gallery img {
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
 
-        .hero p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-
-        /* 4. الزر النيون */
-        .btn {
-            padding: 15px 40px;
-            background: linear-gradient(90deg, #8b5cf6, #6366f1);
-            border-radius: 50px;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.5);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -5px rgba(139, 92, 246, 0.6);
-        }
-
-        /* 5. الكروت */
-        .services {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding: 60px 5%;
-        }
-
-        .card {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            padding: 35px 25px;
-            border-radius: 20px;
-            width: 280px;
-            text-align: center;
-            transition: 0.4s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #8b5cf6;
-            background: rgba(30, 41, 59, 0.6);
-        }
-
-        /* 6. المعرض */
-        .portfolio {
-            padding: 80px 5%;
-            text-align: center;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .gallery div {
-            width: 320px;
-            height: 200px;
-            background: rgba(30, 41, 59, 0.5);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <div class="logo">Khaled Studio</div>
-    <div>
-        <a href="#">الرئيسية</a>
-        <a href="#">خدماتنا</a>
-        <a href="#">أعمالنا</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <h1>نصنع لك <span>هوية رقمية</span> قوية</h1>
-    <p>تصميم مواقع + مونتاج فيديو   + تسويق إلكتروني </p>
-    <a class="btn" href="https://wa.me/967775909069">تواصل الآن</a>
-</section>
-
-<section class="services">
-    <div class="card">
-        <h3>💻 تصميم مواقع</h3>
-        <p>حوّل زوارك إلى عملاء يدفعون — بموقع مصمم ليضاعف حجوزاتك ويجلب لك طلبات يومياتك</p>
-    </div>
-    <div class="card">
-        <h3>🎬 مونتاج فيديو</h3>
-        <p>من فكرة بسيطة إلى فيديو احترافي يرفع لتفاعل ويزيد عملاءك صناعة ومونتاج فيديو لك ولخدمتك</p>
-    </div>
-    <div class="card">
-        <h3>🎨 تصميم إعلانات</h3>
-    <p>إعلاناتك مايحتاج مشاهادات ... يحتاج عملاء - وأنا  أصنع لك إعلان يبيع </p>
-    </div>
-</section>
-
-<section class="portfolio">
-    <h2>نماذج أعمالنا</h2>
-    
-    <div class="gallery">
-        <div><img src="images/Gemini_Generated_Image_feoo4kfeoo4kfeoo.png"style="width:100%; border-radius:10px;"></div>
-      <div><img src="images/Gemini_Generated_Image_u4nkxqu4nkxqu4nk.png" style="width:100%; border-radius:10px;"></div>
-          <div><img src="images/Gemini_Generated_Image_p914xfp914xfp914" style="width:100%; border-radius:10px;"></div>
-    </div>
-
-<section class="contact">
-    <h2>تواصل معنا</h2>
-    <p>جاهز نبدأ مشروعك؟ تواصل معنا الآن</p>
-
-    <a class="btn" href="https://wa.me/967775909069">راسلنا على واتساب</a>
-</section>
-    .contact {
+/* CONTACT */
+.contact {
     text-align: center;
     padding: 80px 20px;
 }
 
 .contact h2 {
     font-size: 32px;
-    margin-bottom: 10px;
 }
 
 .contact p {
     color: #94a3b8;
-    margin-bottom: 30px;
 }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #64748b;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Khaled Studio</div>
+<div>
+<a href="#">الرئيسية</a>
+<a href="#">خدماتنا</a>
+<a href="#">أعمالنا</a>
+<a href="#contact">تواصل</a>
+</div>
+</nav>
+
+<section class="hero">
+<h1>نصنع لك <span>هوية رقمية</span> قوية</h1>
+<p>تصميم مواقع + مونتاج + تسويق إلكتروني</p>
+<a class="btn" href="https://wa.me/967775909069">تواصل الآن</a>
+</section>
+
+<section class="services">
+<div class="card">
+<h3>💻 تصميم مواقع</h3>
+<p>موقع يحول الزوار إلى عملاء ويزيد حجوزاتك</p>
+</div>
+
+<div class="card">
+<h3>🎬 مونتاج</h3>
+<p>فيديو احترافي يجذب الانتباه ويرفع التفاعل</p>
+</div>
+
+<div class="card">
+<h3>📢 إعلانات</h3>
+<p>إعلانات تجلب عملاء حقيقيين وليس مجرد مشاهدات</p>
+</div>
+</section>
+
+<section class="portfolio">
+<h2>نماذج أعمالنا</h2>
+
+<div class="gallery">
+<img src="images/Gemini_Generated_Image_p914xfp914xfp914.png">
+<img src="images/Gemini_Generated_Image_u4nkxqu4nkxqu4nk.png">
+<img src="images/Gemini_Generated_Image_feoo4kfeoo4kfeoo.png">
+</div>
+</section>
+
+<!-- ✅ قسم التواصل -->
+<section id="contact" class="contact">
+<h2>تواصل معنا</h2>
+<p>جاهز نبدأ مشروعك؟ تواصل معنا الآن</p>
+<a class="btn" href="https://wa.me/967775909069">راسلنا على واتساب</a>
+</section>
+
 <footer>
-    © جميع الحقوق محفوظة - خالد ستوديو 2026
+© جميع الحقوق محفوظة - خالد ستوديو 2026
 </footer>
 
 </body>
